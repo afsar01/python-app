@@ -1,8 +1,6 @@
 FROM python:3.4-alpine
-RUN mkdir /code
-ADD app.py /code
+ADD . /code
 WORKDIR /code
-RUN pip install Redis
-RUN pip install Flask
+RUN pip install -r requirements.txt
 EXPOSE 5000
 CMD ["python", "app.py"]
